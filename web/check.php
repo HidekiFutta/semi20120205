@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  echo "ok1";
+  
   $_SESSION["input_token"] = $_POST["input_token"];//なぜか$_SESSION["input_token"]の値が変わってしまう、強制的に
   
   if(!$_POST){
