@@ -1,10 +1,11 @@
 <?php 
   session_start();
-  
+  echo "ok1";
   $_SESSION["input_token"] = $_POST["input_token"];//なぜか$_SESSION["input_token"]の値が変わってしまう、強制的に
   
   if(!$_POST){
     header('Location: ./index.php');
+    echo "unok1";
   }
   
   //タイムスタンプ
@@ -58,13 +59,13 @@
   pg_set_client_encoding("sjis");
     
   $result = pg_query('SELECT id, count, web FROM sanka');
-  //if (!$result) {
-  //    die('クエリーが失敗しました。'.pg_last_error());
-  //} 
+  if (!$result) {
+      die('クエリーが失敗しました。'.pg_last_error());
+  } 
   for ($i = 0 ; $i < pg_num_rows($result) ; $i++){
       $rows = pg_fetch_array($result, NULL, PGSQL_ASSOC);
   //    print('id='.$rows['id']);
-   //   print(',count='.$rows['count'].'<br>');
+  //   print(',count='.$rows['count'].'<br>');
   }
 
   if ($text_value4=="会場参加"){
@@ -76,9 +77,9 @@
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
   $close_flag = pg_close($link);
-  //if ($close_flag){
-   //   print('切断に成功しました。<br>');
-  //}
+  if ($close_flag){
+      print('切断に成功しました。<br>');
+  }
 ?>
 
 <!DOCTYPE html>  
