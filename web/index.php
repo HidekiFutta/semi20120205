@@ -122,7 +122,7 @@
                     <tr>
                         <th class="contact-item">領収書番号（非会員のかた）</th>
                         <td class="contact-body">
-                            <input type="number" id ="textforscb3" name="Rナンバー" class="form-text3" value= "<?php if( !empty($_POST['Rナンバー']) ){ echo $_POST['Rナンバー']; } ?>" disabled="disabled"/>　<font size="2">ハイフンは不要</font>
+                            <input type="number" id ="textforscb3" required="required" name="Rナンバー" class="form-text3" value= "<?php if( !empty($_POST['Rナンバー']) ){ echo $_POST['Rナンバー']; } ?>" disabled="disabled"/>　<font size="2">ハイフンは不要</font>
                         </td>
                     </tr>
                     <tr>
@@ -167,8 +167,7 @@
               function connecttext1(id, ischecked ) {
                   // チェック状態に合わせて有効・無効を切り替える
                   if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;   
-                      document.getElementById("textforscb3").required = "required";              
+                      document.getElementById("textforscb3").disabled = true;            
                       document.getElementById("nn").disabled = false;                 
                       document.getElementById("dn").disabled = true;                 
                       document.getElementById("bn").disabled = true;
