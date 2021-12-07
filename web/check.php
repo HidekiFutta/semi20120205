@@ -74,10 +74,6 @@
     $a = $rows['web'];
   }
 
-  if($a > 12 ){
-    echo "会場参加は定員に達しました<br />";
-    echo "登録フォームに戻り、再度Web参加でお申し込みください<br />";
-  }
   //echo $a;
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
@@ -172,9 +168,14 @@
             </td>
           </tr>
           <tr>
-            <th colspan="2">            
-              <p>この内容でよろしければ『送信する』ボタンを押して下さい．<br>               
-              変更が必要な場合には『戻る』ボタンで前画面に戻ります．</p>
+            <th colspan="2"> 
+　　          <?php if($a<12): ?>          
+    　　　          <p>この内容でよろしければ『送信する』ボタンを押して下さい．<br>               
+          　　　    変更が必要な場合には『戻る』ボタンで登録フォームに戻ります．</p>
+         　　 <?php else : ?>
+         　　　　　 <p>会場参加は定員に達しました．<br>               
+          　　　    『戻る』ボタンで登録フォームに戻り、Web参加でお申し込みください．</p>
+      　　    <?php endif; ?>
             </th>
           </tr>
         </tbody>
