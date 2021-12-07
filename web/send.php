@@ -51,7 +51,7 @@
   
   //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
   if( $keitai =="Web参加"){
-    $announce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>　　　こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
+    $announce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>　　 こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
   else{
     $announce ="・COVID-19の感染状況によりWebのみになった場合は、ご連絡いたします。";
   }
@@ -85,10 +85,10 @@
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
   　　 参加者数に制限があるため、再登録が必要です。</p>
   <p>・登録の取り消しやご不明な点は<br>
-  　　mail:  itdrive@daihougi.ne.jp<br>
+  　　 mail:  itdrive@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   <p>・また、イベントの内容については<br>
-  　　mail: m-kusumoto@daihougi.ne.jp<br>
+  　　 mail: m-kusumoto@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   
   </body>

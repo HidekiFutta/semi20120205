@@ -167,7 +167,8 @@
               function connecttext1(id, ischecked ) {
                   // チェック状態に合わせて有効・無効を切り替える
                   if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;                
+                      document.getElementById("textforscb3").disabled = true;   
+                      document.getElementById("textforscb3").required = true;              
                       document.getElementById("nn").disabled = false;                 
                       document.getElementById("dn").disabled = true;                 
                       document.getElementById("bn").disabled = true;
