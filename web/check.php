@@ -73,13 +73,18 @@
   } else{
     $a = $rows['web'];
   }
+
+  if($a > 12 ){
+    echo "会場参加は定員に達しました<br />";
+    echo "登録フォームに戻り、再度Web参加でお申し込みください<br />";
+  }
   //echo $a;
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
   $close_flag = pg_close($link);
-  if ($close_flag){
-      print('切断に成功しました。<br>');
-  }
+  //if ($close_flag){
+  //    print('切断に成功しました。<br>');
+  //}
 ?>
 
 <!DOCTYPE html>  
@@ -189,8 +194,14 @@
               <input type="submit" formaction="./index.php" value="戻る" style="position: relative; left: 110px; top: 20px;"/>
 
               <?php if(!$tokenValidateError): ?>
+                <?php if($a<12): ?>
+                  　<input type="submit" value="送信する" style="position: relative; left: 130px; top: 20px;"/>
+                <?php else : ?>
+                    <input type="submit" disabled value="送信する" style="position: relative; left: 130px; top: 20px;"/>
+                <?php endif; ?>
+                
                 <input type="hidden" name="a" value="<?php echo $a; ?>">
-                <input type="submit" value="送信する" style="position: relative; left: 130px; top: 20px;"/>
+                
                 <?php
                   //データを配列に
                   $list = array ($a,$text_value0,$text_value1, $text_value2, $text_value3, $text_value4,$text_value5,$text_value6,$text_value7,$text_value8,$text_value9,$text_value10);
