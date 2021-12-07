@@ -49,7 +49,7 @@
   $ZoomURL = "https://us02web.zoom.us/meeting/register/tZcrfuyqrzosGNfUCK9ImOXkSQs0NousJps-";
   $number =  rtrim($keitai, '参加')."：".$count;
   
-  if( $keitai =="Web"){
+  if( $keitai =="Web参加"){
     $announce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
   else{
     $announce ="・COVID-19の感染拡大によりWebのみになった場合は、ご連絡いたします。";
