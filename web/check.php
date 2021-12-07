@@ -168,7 +168,7 @@
             </td>
           </tr>
           <tr>
-            <th colspan="2"> 
+            <th style="text-align:left" colspan="2"> 
 　　          <?php if($a<12): ?>          
     　　　          <p>この内容でよろしければ『送信する』ボタンを押して下さい．<br>               
           　　　    変更が必要な場合には『戻る』ボタンで登録フォームに戻ります．</p>
