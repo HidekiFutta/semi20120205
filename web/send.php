@@ -49,6 +49,12 @@
   $ZoomURL = "https://us02web.zoom.us/meeting/register/tZcrfuyqrzosGNfUCK9ImOXkSQs0NousJps-";
   $number =  rtrim($keitai, '参加')."：".$count;
   
+  if( $keitai =="Web"){
+    $anounce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
+  else{
+    $anounce ="・COVID-19の感染拡大によりWebのみになった場合は、ご連絡いたします。";
+  }
+
   //自動返信メール本文（ヒアドキュメント）
   $messageUser = <<< EOD
   <html>
@@ -74,10 +80,7 @@
   </ul>
       ---------------------------------------------------------------
   
-  
-  <p>if( $keitai =="Web"){・Web参加の方は次のボタンを押してZoomに登録してください。<br>
-  　　  こちら　⇒　<a href="$ZoomURL">Zoom登録</a></p>}
-     else{・COVID-19の感染拡大によりWebのみになった場合は、ご連絡いたします。 </p>}
+  <p>$anaunce </p>
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
   　　 参加者数に制限があるため、再登録が必要です。<br>
   　　 取り消しの連絡は不要です。</p>
