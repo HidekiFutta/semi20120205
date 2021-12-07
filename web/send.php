@@ -34,7 +34,7 @@
   //$checkboxArray = implode(",",$_SESSION['スキル']);
 
   //メール本文内に表示するデータの変数化
-  $event = "明日から役立つセミナー";
+  $event = "組織部学術研修会　担当：中央ブロック";
   $count = h($_POST["a"]);
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
@@ -46,7 +46,7 @@
   $radio = h($_SESSION['ブロック']);
   $checkbox = h($_SESSION['Rナンバー']);
   $textarea = h($_SESSION['備考']);
-  $ZoomURL = "https://us02web.zoom.us/meeting/register/tZ0vd-CpqTIiGNZRvgthk9tf91tS3W5MTZsS";
+  $ZoomURL = "https://us02web.zoom.us/meeting/register/tZcrfuyqrzosGNfUCK9ImOXkSQs0NousJps-";
   $number =  rtrim($keitai, '参加')."：".$count;
   
   //自動返信メール本文（ヒアドキュメント）
@@ -74,8 +74,11 @@
   </ul>
       ---------------------------------------------------------------
   
-  <p>・Web参加の方は次のボタンを押してZoomに登録してください。<br>
-  　　こちら　⇒　<a href="$ZoomURL">Zoom登録</a></p>
+  if( $keitai =="Web"){
+    <p>・Web参加の方は次のボタンを押してZoomに登録してください。<br>
+  　　  こちら　⇒　<a href="$ZoomURL">Zoom登録</a></p>}
+  if( $keitai =="会場"){
+    <p>・COVID-19の感染拡大によりWebのみになった場合は、ご連絡いたします。 </p>}
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
   　　 参加者数に制限があるため、再登録が必要です。<br>
   　　 取り消しの連絡は不要です。</p>
@@ -83,7 +86,7 @@
   　　mail:  itdrive@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   <p>・また、イベントの内容については<br>
-  　　mail: 担当者のアドレス<br>
+  　　mail: m-kusumoto@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   
   </body>

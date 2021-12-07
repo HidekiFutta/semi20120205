@@ -70,6 +70,7 @@
 
   if ($text_value4=="会場参加"){
     $a = $rows['count'];
+    $b = $rows['count'];
   } else{
     $a = $rows['web'];
   }
@@ -169,11 +170,11 @@
           </tr>
           <tr>
             <th style="text-align:left" colspan="2"> 
-　　          <?php if($a<12): ?>          
+　　          <?php if($b<16): ?>          
     　　　          <p>　この内容でよろしければ『送信する』ボタンを押して下さい．<br>
     　変更が必要な場合には『戻る』ボタンで登録フォームに戻ります．</p>
          　　 <?php else : ?>
-         　　　　　 <p>　会場参加は定員に達しました．<br>
+         　　　　　 <p>　　会場参加は定員に達しました．<br>
          　『戻る』ボタンで登録フォームに戻り、Web参加でお申し込みください．</p>
       　　    <?php endif; ?>
             </th>
@@ -195,7 +196,7 @@
               <input type="submit" formaction="./index.php" value="戻る" style="position: relative; left: 110px; top: 20px;"/>
 
               <?php if(!$tokenValidateError): ?>
-                <?php if($a<12): ?>
+                <?php if($b<16): ?>
                   　<input type="submit" value="送信する" style="position: relative; left: 130px; top: 20px;"/>
                 <?php else : ?>
                     <input type="submit" disabled value="送信する" style="position: relative; left: 130px; top: 20px;"/>

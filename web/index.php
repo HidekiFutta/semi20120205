@@ -58,11 +58,11 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加（非会員はWebのみ参加可）</span>
+                                <span class="contact-skill-txt">Web参加（会員限定先着80名）</span>
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt">会場参加（会員限定先着12名)</span>
+                                <span class="contact-skill-txt">会場参加（先着15名)</span>
                             </label>                        
                         </td>
                     </tr>
