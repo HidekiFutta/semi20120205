@@ -124,7 +124,7 @@ EOD;
 //if(!empty($_SESSION['email_1'])) {
 
 $email = new \SendGrid\Mail\Mail();
-    $email->setFrom("fujita@daihougi.ne.jp", "大放技");
+    $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);
@@ -139,9 +139,10 @@ $email = new \SendGrid\Mail\Mail();
   }
 
 $email = new \SendGrid\Mail\Mail();
-  $email->setFrom("fujita@daihougi.ne.jp", "大放技");
+  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
+  $email->addTo("hima71f@gmail.com", "User");
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
