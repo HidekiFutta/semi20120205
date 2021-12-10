@@ -142,7 +142,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->setFrom("fujita@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
-  $email->addTo("hima71f@gmail.com", "User");
+  $email->addTo("Lucky19720601@gmail.com ", "User");
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
