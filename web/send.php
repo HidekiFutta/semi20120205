@@ -124,7 +124,7 @@ EOD;
 //if(!empty($_SESSION['email_1'])) {
 
 $email = new \SendGrid\Mail\Mail();
-    $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
+    $email->setFrom("fujita@daihougi.ne.jp", "大放技");
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);
@@ -139,7 +139,7 @@ $email = new \SendGrid\Mail\Mail();
   }
 
 $email = new \SendGrid\Mail\Mail();
-  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
+  $email->setFrom("fujita@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
   //$email->addTo("Lucky19720601@gmail.com", "User");
