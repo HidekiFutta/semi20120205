@@ -135,7 +135,7 @@ $email = new \SendGrid\Mail\Mail();
       //print_r($response->headers());
       //print $response->body() . "\n";
     } catch (Exception $e) {
-      echo 'Caught exception: '. $e->getMessage() ."\n";
+      //echo 'Caught exception: '. $e->getMessage() ."\n";
   }
 
 $email = new \SendGrid\Mail\Mail();
@@ -151,7 +151,7 @@ $email = new \SendGrid\Mail\Mail();
     //print_r($response->headers());
     //print $response->body() . "\n";
   } catch (Exception $e) {
-    echo 'Caught exception: '. $e->getMessage() ."\n";
+    //echo 'Caught exception: '. $e->getMessage() ."\n";
 }
     
 $isSend = true;
