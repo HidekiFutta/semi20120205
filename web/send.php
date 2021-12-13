@@ -135,7 +135,7 @@ $email = new \SendGrid\Mail\Mail();
       //print_r($response->headers());
       //print $response->body() . "\n";
     } catch (Exception $e) {
-      echo 'Caught exception: '. $e->getMessage() ."\n";
+      echo 'test';  //Caught exception: '. $e->getMessage() ."\n";
   }
 
 $email = new \SendGrid\Mail\Mail();
@@ -190,7 +190,7 @@ $isSend = true;
     pg_query($link, "UPDATE sanka SET web= $rows WHERE id = '1'"); 
   }
   //参加者名簿
-  $result2 = pg_query('SELECT * FROM meibo');
+  $result2 = pg_query($link,'SELECT * FROM meibo');
   if (!$result2) {
       die('クエリーが失敗しました。'.pg_last_error());
   } 
