@@ -1834,7 +1834,7 @@ class Mail implements \JsonSerializable
      * @return null|array
      * @throws TypeException
      */
-    public function jsonSerialize()
+    public function JsonSerializable()
     {
         // Detect if we are using the new dynamic templates
         if ($this->getTemplateId() !== null && strpos($this->getTemplateId()->getTemplateId(), 'd-') === 0) {
@@ -1843,6 +1843,35 @@ class Mail implements \JsonSerializable
             }
         }
 
-       
+        return array_filter(
+            [
+                'personalizations' => array_values(array_filter(
+                    $this->getPersonalizations(),
+                    static function ($value) {
+                        return null !== $value && null !== $value->jsonSerialize();
+                    }
+                )),
+                'from' => $this->getFrom(),
+                'reply_to' => $this->getReplyTo(),
+                'subject' => $this->getGlobalSubject(),
+                'content' => $this->getContents(),
+                'attachments' => $this->getAttachments(),
+                'template_id' => $this->getTemplateId(),
+                'sections' => $this->getSections(),
+                'headers' => $this->getGlobalHeaders(),
+                'categories' => $this->getCategories(),
+                'custom_args' => $this->getGlobalCustomArgs(),
+                'send_at' => $this->getGlobalSendAt(),
+                'batch_id' => $this->getBatchId(),
+                'asm' => $this->getASM(),
+                'ip_pool_name' => $this->getIpPoolName(),
+                'substitutions' => $this->getGlobalSubstitutions(),
+                'mail_settings' => $this->getMailSettings(),
+                'tracking_settings' => $this->getTrackingSettings()
+            ],
+            static function ($value) {
+                return $value !== null;
+            }
+        ) ?: null;
     }
 }
