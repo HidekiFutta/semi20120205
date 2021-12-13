@@ -122,19 +122,15 @@ EOD;
 //mb_internal_encoding("UTF-8");
 
 //if(!empty($_SESSION['email_1'])) {
-//$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-
+$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
 $email = new \SendGrid\Mail\Mail();
     $email->setFrom("fujita@daihougi.ne.jp", "大放技");
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);  
-    $apiKey = getenv('SENDGRID_API_KEY');
-    $sg = new \SendGrid($apiKey);
     try {
-      $response = $sg->client->suppression()->bounces()->get();
-      //$response = $sendgrid->send($email);
+      $response = $sendgrid->send($email);
       //print $response->statusCode() . "\n";
       //print_r($response->headers());
       //print $response->body() . "\n";
