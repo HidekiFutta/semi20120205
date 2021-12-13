@@ -128,13 +128,12 @@ $email = new \SendGrid\Mail\Mail();
     $email->setFrom("fujita@daihougi.ne.jp", "大放技");
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
-    $email->addContent("text/html", $messageUser);
-    
+    $email->addContent("text/html", $messageUser);  
     try {
       $response = $sendgrid->send($email);
-      //print $response->statusCode() . "\n";
-      //print_r($response->headers());
-      //print $response->body() . "\n";
+      print $response->statusCode() . "\n";
+      print_r($response->headers());
+      print $response->body() . "\n";
     } catch (Exception $e) {
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
