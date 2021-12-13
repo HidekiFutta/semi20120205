@@ -34,7 +34,7 @@
   //$checkboxArray = implode(",",$_SESSION['スキル']);
 
   //メール本文内に表示するデータの変数化
-  $event = "明日から役立つセミナー";
+  $event = "組織部学術研修会　担当：中央ブロック";
   $count = h($_POST["a"]);
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
@@ -46,9 +46,16 @@
   $radio = h($_SESSION['ブロック']);
   $checkbox = h($_SESSION['Rナンバー']);
   $textarea = h($_SESSION['備考']);
-  $ZoomURL = "https://us02web.zoom.us/meeting/register/tZ0vd-CpqTIiGNZRvgthk9tf91tS3W5MTZsS";
+  $ZoomURL = "https://us02web.zoom.us/meeting/register/tZcrfuyqrzosGNfUCK9ImOXkSQs0NousJps-";
   $number =  rtrim($keitai, '参加')."：".$count;
   
+  //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
+  if( $keitai =="Web参加"){
+    $announce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>　　 こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
+  else{
+    $announce ="・COVID-19の感染状況によりWebのみになった場合は、ご連絡いたします。";
+  }
+
   //自動返信メール本文（ヒアドキュメント）
   $messageUser = <<< EOD
   <html>
@@ -74,16 +81,14 @@
   </ul>
       ---------------------------------------------------------------
   
-  <p>・Web参加の方は次のボタンを押してZoomに登録してください。<br>
-  　　こちら　⇒　<a href="$ZoomURL">Zoom登録</a></p>
+  <p>{$announce} </p>
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
-  　　 参加者数に制限があるため、再登録が必要です。<br>
-  　　 取り消しの連絡は不要です。</p>
+  　　 参加者数に制限があるため、再登録が必要です。</p>
   <p>・登録の取り消しやご不明な点は<br>
-  　　mail:  itdrive@daihougi.ne.jp<br>
+  　　 mail:  itdrive@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   <p>・また、イベントの内容については<br>
-  　　mail: 担当者のアドレス<br>
+  　　 mail: m-kusumoto@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   
   </body>
@@ -137,6 +142,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->setFrom("fujita@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
+  //$email->addTo("Lucky19720601@gmail.com", "User");
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
@@ -158,7 +164,7 @@ $isSend = true;
 
 <?php if($isSend):
   //受付番号：カウントアップ
-  $conn = "host=ec2-107-23-213-65.compute-1.amazonaws.com port=5432 dbname=d4ks9slduj6cv5 user=sffidyayzpqkvc password=003191ced6971ffafff72a769cdca4bc5ffb48110ff5c0d5dec17226f1267bb6";
+  $conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=d7mmugf289n5ol user=wwdgwynyievckz password=bac3249f96249a528949d80f7d095405efcb6e5f9898d60798a38ce155c03017";
     
   $link = pg_connect($conn);
   if (!$link) {
