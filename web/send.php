@@ -123,13 +123,13 @@ EOD;
 //mb_internal_encoding("UTF-8");
 
 //if(!empty($_SESSION['email_1'])) {
-$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
 $email = new \SendGrid\Mail\Mail();
     $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
       $response = $sendgrid->send($email);
       //print $response->statusCode() . "\n";
@@ -145,7 +145,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->addTo("hima71f@yahoo.co.jp", "User");
   //$email->addTo("Lucky19720601@gmail.com", "User");
   $email->addContent("text/plain", $messageAdmin);
-  //$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
     $response = $sendgrid->send($email);
     //print $response->statusCode() . "\n";
