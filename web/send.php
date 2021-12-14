@@ -133,7 +133,7 @@ $email = new \SendGrid\Mail\Mail();
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
       $response = $sendgrid->send($email);
-      print $response;//->statusCode() . "\n";
+      //print $response->statusCode() . "\n";
       echo $response;
       //print_r($response->headers());
       //print $response->body() . "\n";    
