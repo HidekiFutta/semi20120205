@@ -9,9 +9,10 @@
     echo '送信できませんでした。再度お試しください。';
     echo '詳しくは　"itdrive@daihougi.ne.jp"　までお問い合わせください。';
   }
-  error_reporting(0);
+  
   //参考HP　https://designsupply-web.com/media/programming/1642/
   //任意入力項目の配列が空の場合のエラーメッセージ制御
+  error_reporting(0); //エラー非表示
   //error_reporting(E_ALL ^ E_NOTICE);
 
   require '../vendor/autoload.php';
@@ -117,7 +118,6 @@ HPより以下の登録がありました。
 ----------------------------------------------------
 EOD;
 
-
 //メール共通送信設定
 //mb_language("ja");
 //mb_internal_encoding("UTF-8");
@@ -133,7 +133,8 @@ $email = new \SendGrid\Mail\Mail();
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
       $response = $sendgrid->send($email);
-      //print $response->statusCode() . "\n";
+      print $response;//->statusCode() . "\n";
+      echo $response;
       //print_r($response->headers());
       //print $response->body() . "\n";    
     } catch (Exception $e) {
