@@ -83,7 +83,7 @@
   </ul>
       ---------------------------------------------------------------
   
-  <p>{$announce} </p>
+  <p><font color="red">{$announce}</font> </p>
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
   　　 参加者数に制限があるため、再登録が必要です。</p>
   <p>・登録の取り消しやご不明な点は<br>
@@ -144,7 +144,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
-  $email->addTo("Lucky19720601@gmail.com", "User");
+  //$email->addTo("Lucky19720601@gmail.com", "User");
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
