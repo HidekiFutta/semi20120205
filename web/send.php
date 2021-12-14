@@ -26,6 +26,7 @@
   $outputDate = $dateFormatYMD.$dateFormatHIS;
 
   //XSS対策用サニタイズ
+  #[\ReturnTypeWillChange]
   function h($str) {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
   }
