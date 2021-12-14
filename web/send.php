@@ -135,6 +135,9 @@ $email = new \SendGrid\Mail\Mail();
       //print $response->statusCode() . "\n";
       //print_r($response->headers());
       //print $response->body() . "\n";
+      foreach ($email as $value) {
+        echo gettype($value), "\n";
+    }
     } catch (Exception $e) {
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
