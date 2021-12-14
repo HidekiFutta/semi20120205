@@ -132,7 +132,7 @@ $email = new \SendGrid\Mail\Mail();
     $email->addContent("text/html", $messageUser);
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
-      $response = $sendgrid->send($email);
+      //$response = $sendgrid->send($email);
       print $response->statusCode() . "\n";
       print_r($response->headers());
       print $response->body() . "\n";    
@@ -148,7 +148,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
-    $response = $sendgrid->send($email);
+    //$response = $sendgrid->send($email);
     //print $response->statusCode() . "\n";
     //print_r($response->headers());
     //print $response->body() . "\n";
