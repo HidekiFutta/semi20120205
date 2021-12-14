@@ -89,7 +89,7 @@
   <p>・登録の取り消しやご不明な点は<br>
   　　 mail:  itdrive@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
-  <p>・また、イベントの内容については<br>
+  <p>・イベントの内容については<br>
   　　 mail: m-kusumoto@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   
