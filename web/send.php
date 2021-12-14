@@ -9,7 +9,7 @@
     echo '送信できませんでした。再度お試しください。';
     echo '詳しくは　"itdrive@daihougi.ne.jp"　までお問い合わせください。';
   }
-  
+  error_reporting(0);
   //参考HP　https://designsupply-web.com/media/programming/1642/
   //任意入力項目の配列が空の場合のエラーメッセージ制御
   error_reporting(E_ALL ^ E_NOTICE);
