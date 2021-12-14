@@ -123,6 +123,7 @@ EOD;
 //mb_internal_encoding("UTF-8");
 
 //if(!empty($_SESSION['email_1'])) {
+//https://sendgrid.kke.co.jp/docs/Integrate/Code_Examples/v3_Mail/php.html
 
 $email = new \SendGrid\Mail\Mail();
     $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
@@ -132,9 +133,9 @@ $email = new \SendGrid\Mail\Mail();
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
       $response = $sendgrid->send($email);
-      //print $response->statusCode() . "\n";
-      //print_r($response->headers());
-      //print $response->body() . "\n";    
+      print $response->statusCode() . "\n";
+      print_r($response->headers());
+      print $response->body() . "\n";    
     } catch (Exception $e) {
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
