@@ -130,9 +130,6 @@ $email = new \SendGrid\Mail\Mail();
     $email->setSubject("大放技イベント受付");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);
-    foreach ($email as $value) {
-      echo gettype($value), "\n";
-  } 
     try {
       $response = $sendgrid->send($email);
       //print $response->statusCode() . "\n";
@@ -142,6 +139,9 @@ $email = new \SendGrid\Mail\Mail();
     } catch (Exception $e) {
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
+foreach ($email as $value) {
+    echo gettype($value), "\n";
+} 
 
 $email = new \SendGrid\Mail\Mail();
   $email->setFrom("fujita@daihougi.ne.jp", "大放技");
