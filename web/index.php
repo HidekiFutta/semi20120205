@@ -16,9 +16,9 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="組織部学術研修会　登録フォーム" />
+        <meta name="description" content="大放技イベント登録フォーム" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>大放技登録フォーム</title>
+        <title>組織部学術研修会 登録フォーム</title>
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
         <link rel="stylesheet" href="css/style.css" media="all" />
