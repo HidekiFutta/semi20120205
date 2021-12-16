@@ -16,7 +16,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="大放技イベント登録フォーム" />
+        <meta name="description" content="組織部学術研修会　登録フォーム" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>大放技登録フォーム</title>
         <link rel="shortcut icon" href="/favicon.ico">
@@ -62,7 +62,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　2月3日締切（先着15名)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　2月2日締切（先着15名)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -203,11 +203,11 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date('2022-02-03T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
+              var endObj   = new Date('2022-02-02T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
-                  comment= "<font color='red'>会場参加　締め切りました（締切2月3日)</font>";
+                  comment= "<font color='red'>会場参加　締め切りました（締切2月2日)</font>";
                   document.getElementById("edit_area").innerHTML = comment;
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
