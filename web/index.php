@@ -25,7 +25,7 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl">登録フォーム</h1>
+            <h1 class="contact-ttl" id="edit_area2">登録フォーム</h1>
          
             <form method="post" action="./check.php">
                 <table class="contact-table">
@@ -61,8 +61,8 @@
                                 <span class="contact-skill-txt">Web参加　当日まで登録可（会員限定先着80名）</span>
                             </label>
                             <label class="contact-skill">
-                                <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt">会場参加　2月3日締切（先着15名)</span>
+                                <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　2月3日締切（先着15名)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -133,7 +133,7 @@
                     </tr>
                 </table>
 
-                <input class="contact-submit" type="submit" name="submit" value="確　認" />
+                <input class="contact-submit" id="comf" type="submit" name="submit" value="確　認" />
             </form>
             
             <script language="JavaScript" type="text/javascript">
@@ -199,6 +199,26 @@
                       document.getElementById("dn").disabled = true;                 
                       document.getElementById("bn").disabled = true;
                   }
+              }
+              //会場参加の締め切り日設定
+              var todayObj = new Date(); 
+              var today   = todayObj.getTime();
+              var endObj   = new Date('2022-02-03T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
+              var end   = endObj.getTime();
+              var comment = "";
+              if(end <= today){// 有効期限の範囲外
+                  comment= "<font color='red'>会場参加　締め切りました（締切2月3日)</font>";
+                  document.getElementById("edit_area").innerHTML = comment;
+                  document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
+              }
+              //イベント終了後
+              var endObj2   = new Date('2022-02-05T17:59:59');  // 開催日を指定 '2021-12-16T16:36:59'
+              var end2   = endObj2.getTime();
+              var comment2 = "";
+              if(end2 <= today){// 有効期限の範囲外
+                  comment2= "<font color='red'>イベントは終了しました</font>";
+                  document.getElementById("edit_area2").innerHTML = comment2;
+                  document.getElementById("comf").disabled = true;  //締切後押せなくする
               }
             // -->
             </script>            
