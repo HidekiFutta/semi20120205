@@ -18,14 +18,14 @@
         <meta charset="utf-8" />
         <meta name="description" content="大放技イベント登録フォーム" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>組織部学術研修会 登録フォーム</title>
+        <title>大放技登録フォーム</title>
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
         <link rel="stylesheet" href="css/style.css" media="all" />
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2">登録フォーム</h1>
+            <h1 class="contact-ttl" id="edit_area2">組織部学術研修会 登録フォーム</h1>
          
             <form method="post" action="./check.php">
                 <table class="contact-table">
