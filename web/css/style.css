@@ -18,17 +18,6 @@ body {
     }
 }
 
-/* スマホだけに適用するCSS */
-@media screen and ( max-width:479px )
-{
-	.contact 
-	{
-		width: 900px;
-        margin: 0 auto;
-        padding: 30px 0;
-	}
-}
-
 .contact-ttl {
     font-size: 40px;
     font-weight: bold;
@@ -69,7 +58,6 @@ body {
 .contact-body {
     width: 70%;
 }
-
 
 .contact-body2 {
     width: 70%;
@@ -168,4 +156,158 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
+}
+
+
+/* スマホだけに適用するCSS */
+@media screen and ( max-width:479px )
+{
+	.contact 
+	{
+		width: 360px;
+        margin: 0 auto;
+        padding: 5px 0;
+	}
+
+    .contact-ttl {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact-table {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact-item,
+.contact-body {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-item,
+.contact-body2 {
+    padding: 5x;
+    border: 1px solid #ccc;
+}
+
+.contact-item,
+.contact-body3 {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-item {
+    font-size: 15px;
+    text-align: center;
+    width: 30%;
+    background-color: #1ee9e124;
+}
+
+.contact-body {
+    width: 70%;
+}
+
+.contact-body2 {
+    width: 70%;
+}
+
+.contact-body3 {
+    width: 70%;
+}
+
+.form-text {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 300px;
+}
+
+.form-text2 {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 300px;
+}
+
+.form-text3 {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 80px;
+}
+
+.contact-sex + .contact-sex {
+    margin-left: 10px;
+}
+
+.contact-sex-txt {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.form-select {
+    width: 120px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-skill {
+    display: block;
+}
+
+.contact-skill + .contact-skill {
+    margin-top: 5px;
+}
+
+.contact-skill-txt {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 5px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.contact-submit {
+    width: 200px;
+    background-color: rgb(26, 248, 6);
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 100vh;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
 }
