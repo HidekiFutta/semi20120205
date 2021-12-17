@@ -164,13 +164,13 @@ body {
 {
 	.contact 
 	{
-		width: 360px;
+		width: 320px;
         margin: 0 auto;
         padding: 5px 0;
 	}
 
     .contact-ttl {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
@@ -201,22 +201,22 @@ body {
 }
 
 .contact-item {
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
-    width: 30%;
+    width: 28;
     background-color: #1ee9e124;
 }
 
 .contact-body {
-    width: 70%;
+    width: 72%;
 }
 
 .contact-body2 {
-    width: 70%;
+    width: 72%;
 }
 
 .contact-body3 {
-    width: 70%;
+    width: 72%;
 }
 
 .form-text {
@@ -227,7 +227,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    max-width: 300px;
+    max-width: 240px;
 }
 
 .form-text2 {
@@ -270,7 +270,7 @@ body {
 }
 
 .contact-skill {
-    display: block;
+    display: inline-block;
 }
 
 .contact-skill + .contact-skill {
@@ -278,15 +278,16 @@ body {
 }
 
 .contact-skill-txt {
-    display: inline-block;
-    margin-left: 5px;
+    display: block;
+    margin-left: 25px;
     font-size: 12px;
+    margin-top:-17px;
 }
 
 .form-textarea {
     width: 100%;
     padding: 5px;
-    height: 80px;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
